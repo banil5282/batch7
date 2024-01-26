@@ -10,3 +10,8 @@ def add(request):
 def mul(request):
 	result = 20 * 20
 	return HttpResponse(f"The multiplication is {result}")
+
+
+def div(request):
+	result = 200 // 20
+	return HttpResponse(f"The Division is {result}")
