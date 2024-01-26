@@ -7,3 +7,6 @@ def add(request):
 	addtion = 20 + 20
 	return HttpResponse(f"The sum is {addtion}")
 
+def mul(request):
+	result = 20 * 20
+	return HttpResponse(f"The multiplication is {result}")
