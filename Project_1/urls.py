@@ -17,10 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from app1 import views
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', views.home, name="home"),
     path('add/', views.add),
     path('mul/', views.mul),
-    path('div/', views.div)
+    path('div/', views.div),
+    path('operations/', csrf_exempt(views.Calculations.as_view()), name="operations"),
+    path('persons/', csrf_exempt(views.PersonDetails.as_view()), name="persons"),
+    path('create_person/', views.create_person, name="create_person"),
+    path('delete_person/', csrf_exempt(views.delete_person), name="delete_person")
 ]
